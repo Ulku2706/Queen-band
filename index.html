@@ -6,169 +6,169 @@
     <title>Queen: Feel the Music</title>
     <style>
         body {
-            background-color: #0d0d0d;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #f1f1f1;
+            font-family: Arial, Helvetica, sans-serif;
             margin: 0;
-            padding: 30px 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 20px;
+            line-height: 1.6;
         }
 
-        /* Başlıklar ve paragraflar */
-        h1 {
-            color: #ff66b2;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        p.intro {
-            text-align: center;
-            max-width: 650px;
-            margin-bottom: 30px;
-            color: #e0e0e0;
-            font-size: 1.1rem;
-        }
-
-        /* Pembe kutucuklar / kartlar */
-        .card {
-            background-color: #ff66b2;
-            color: #1a1a1a;
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 25px;
-            width: 100%;
-            max-width: 650px;
-            box-sizing: border-box;
-            box-shadow: 0 4px 15px rgba(255, 102, 178, 0.25);
-        }
-
-        .card h2 {
-            margin-top: 0;
-            color: #3b0022;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-            padding-bottom: 8px;
-        }
-
-        /* Fotoğrafların bulunduğu alan ve eşit boyutlandırma */
-        .photos-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 15px;
-        }
-
-        /* Tüm fotoğrafların aynı boyutta olması için ayarlar */
-        .photos-container img {
-            width: 260px;
-            height: 260px;
-            object-fit: cover; /* Fotoğraflar uzamadan, tam kare alana düzgünce oturur */
-            border-radius: 10px;
-            border: 3px solid #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Liste ve linkler */
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-            font-weight: 500;
+        h1, h2 {
+            color: #e5a93b;
         }
 
         a {
-            color: #ffffff;
-            background-color: #2b001a;
-            padding: 4px 10px;
-            border-radius: 6px;
+            color: #4da6ff;
             text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 4px;
         }
 
         a:hover {
-            background-color: #000000;
+            text-decoration: underline;
         }
 
-        /* Medya oynatıcılar */
-        audio, video {
-            width: 100%;
+        /* Fotoğraf Düzeni: Grup ortada, üyeler sol tarafta alt alta */
+        .gallery-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .members-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .member-card, .group-card {
+            text-align: center;
+        }
+
+        .member-card img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
             border-radius: 8px;
-            margin-top: 10px;
+            border: 2px solid #333;
+            display: block;
         }
 
-        /* İletişim formu içindeki kutucuklar */
-        form label {
-            font-weight: bold;
-            color: #2b001a;
+        .group-card img {
+            width: 420px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #e5a93b;
+            display: block;
         }
 
-        form input[type="text"],
-        form input[type="email"],
-        form textarea {
+        .caption {
+            font-size: 13px;
+            color: #bbb;
+            margin-top: 5px;
+        }
+
+        /* Form ve diğer bölümler */
+        form {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            border: 1px solid #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
             margin-bottom: 15px;
-            border: 2px solid #ffffff;
-            border-radius: 6px;
+            background-color: #2b2b2b;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 4px;
             box-sizing: border-box;
-            background-color: #ffffff;
-            color: #000000;
-            font-size: 1rem;
         }
 
-        form textarea {
-            resize: vertical;
-            min-height: 90px;
-        }
-
-        form input[type="submit"] {
-            background-color: #2b001a;
-            color: #ffffff;
+        input[type="submit"] {
+            background-color: #e5a93b;
+            color: #121212;
             border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
+            padding: 10px 20px;
             font-weight: bold;
-            border-radius: 6px;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.2s;
+            transition: background 0.3s;
         }
 
-        form input[type="submit"]:hover {
-            background-color: #000000;
+        input[type="submit"]:hover {
+            background-color: #d49528;
+        }
+
+        audio, video {
+            margin-top: 10px;
+            border-radius: 6px;
         }
     </style>
 </head>
-    <body>
-    <h1>Welcome to Queen</h1>
-    <p>We are Queen, a band that blends genres to create unique sounds. Our journey through music has been incredible, and we're excited to share it with you.</p>
-  
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5esHsVLRqJu1Vfx0Kt8TzSXXJ4ROocTr8gUdKs0VB6WfbqG2rkcI2EZw&s=10" alt="Queen Band Photo">
-  
-    <img src="https://10layn.com/wp-content/uploads/2018/11/freddie-mercury-1978-683x1024.jpg" alt="Queen Lead Vocals/Piano: Freddie Mercury">
-    <img src="https://lastfm-img.freetls.fastly.net/i/u/ar0/f2016069f4c2453987801a196327469e.jpg" alt="Queen Lead Guitar/Vocals: Brian May">
-    <img src="https://i.redd.it/xi9f8kksx0o91.jpg" alt="Queen Bass Guitar: John Deacon">
-    <img src="https://queenphotos.wordpress.com/wp-content/uploads/2013/04/398815_172297472923111_1306237960_n.jpg" alt="Queen Drums/Vocals: Roger Taylor">
-    <div class="card">
+<body>
+
+    <!-- 3. Body Section: Band Introduction -->
+    <header>
+        <h1>Welcome to Queen</h1>
+        <p>We are Queen, a legendary band that blends genres to create unique sounds. Our journey through music has been incredible, and we're excited to share it with you.</p>
+    </header>
+
+    <!-- Fotoğraf Bölümü: Üyeler solda alt alta, Grup fotoğrafı ortada -->
+    <section class="gallery-container">
+        <!-- Sol Taraf: Grup Üyeleri Alt Alta -->
+        <div class="members-column">
+            <div class="member-card">
+                <img src="https://10layn.com/wp-content/uploads/2018/11/freddie-mercury-1978-683x1024.jpg" alt="Queen Lead Vocals/Piano: Freddie Mercury">
+                <span class="caption">Freddie Mercury</span>
+            </div>
+            <div class="member-card">
+                <img src="https://brianmay.com/wp-content/uploads/2021/01/Total_Guitar_teaser_Brian_May_576x731.jpg" alt="Queen Lead Guitar/Vocals: Brian May">
+                <span class="caption">Brian May</span>
+            </div>
+            <div class="member-card">
+                <img src="https://static.wixstatic.com/media/3655b5_97add76c70e140c0ad15b69e5923cdf0~mv2.jpg/v1/fill/w_738,h_600,al_c,lg_1,q_85/3655b5_97add76c70e140c0ad15b69e5923cdf0~mv2.jpg" alt="Queen Drums/Vocals: Roger Taylor">
+                <span class="caption">Roger Taylor</span>
+            </div>
+            <div class="member-card">
+                <img src="https://static.wikia.nocookie.net/bohemianrhapsody/images/8/89/John_Deacon.jpg/revision/latest?cb=20190805225823" alt="Queen Bass Guitar: John Deacon">
+                <span class="caption">John Deacon</span>
+            </div>
+        </div>
+
+        <!-- Orta: Grup Resmi -->
+        <div class="group-card">
+            <img src="queen-band.jpg" alt="Queen Band Photo">
+            <span class="caption" style="font-size: 15px; font-weight: bold;">Queen (Official Band Photo)</span>
+        </div>
+    </section>
+
+    <!-- 4. Music and Video Showcases -->
+    <section>
         <h2>Listen to Our Latest Tracks</h2>
         <audio controls>
-            <source src="audio/bohemian-rhapsody.mp3" type="audio/mpeg">
+            <source src="bohemian-rhapsody.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
 
-        <h2 style="margin-top: 25px;">Watch Our Performances</h2>
-        <video controls>
-            <source src="video/live-aid-1985.mp4" type="video/mp4">
+        <h2>Watch Our Performances</h2>
+        <video controls width="500">
+            <source src="live-aid-performance.mp4" type="video/mp4">
             Your browser does not support the video element.
         </video>
-    </div>
-    <div class="card">
+    </section>
+
+    <!-- 5. Tour Dates and Band News -->
+    <section>
         <h2>Upcoming Tour Dates</h2>
         <ul>
             <li>
@@ -176,21 +176,27 @@
                 <a href="https://example.com/purchase-tickets-queen-london" target="_blank">Get Tickets</a>
             </li>
             <li>
-                March 14, 2029, Tokyo, Japan - 
-                <a href="https://example.com/purchase-tickets-queen-tokyo" target="_blank">Get Tickets</a>
+                March 14, 2029, Wembley Stadium - 
+                <a href="https://example.com/purchase-tickets-queen-wembley" target="_blank">Get Tickets</a>
             </li>
         </ul>
-    </div>
-    <div class="card">
+    </section>
+
+    <!-- 6. Connect with the Band -->
+    <section>
         <h2>Follow Us</h2>
-        <p style="margin-top: 0; color: #3b0022;">Stay updated with our latest news and releases:</p>
-        <a href="https://www.facebook.com/Queen" target="_blank">Facebook</a><br>
-        <a href="https://www.instagram.com/officialqueenmusic" target="_blank">Instagram</a><br>
-        <a href="https://twitter.com/QueenWillRock" target="_blank">Twitter / X</a>
-    </div>
-    <div class="card">
+        <p>Stay updated with our latest news and releases:</p>
+        <p>
+            <a href="https://www.facebook.com/Queen" target="_blank">Faceblock</a><br>
+            <a href="https://www.instagram.com/officialqueenmusic" target="_blank">Instagrump</a><br>
+            <a href="https://twitter.com/QueenWillRock" target="_blank">Twotter</a>
+        </p>
+    </section>
+
+    <!-- 7. Create a Contact Form -->
+    <section>
         <h2>Contact Us</h2>
-        <form>
+        <form action="#" method="post">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name"><br>
 
@@ -201,11 +207,11 @@
             <input type="text" id="subject" name="subject"><br>
 
             <label for="message">Message:</label><br>
-            <textarea id="message" name="message"></textarea><br>
+            <textarea id="message" name="message" rows="5"></textarea><br>
 
             <input type="submit" value="Send">
         </form>
-    </div>
+    </section>
 
 </body>
 </html>
